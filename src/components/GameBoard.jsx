@@ -185,10 +185,27 @@ export const GameBoard = ({ selectedCharacter }) => {
 
   const handleSearch = () => {
     if (actionPoints <= 0 || gameWon || gameOver) return;
-    const randomCard =
-      equipmentCards[Math.floor(Math.random() * equipmentCards.length)];
-    setEquipment([...equipment, randomCard]);
-    alert(`Found ${randomCard.name}!`);
+    
+    // 30% chance to find nothing
+    if (Math.random() < 0.3) {
+      alert('You searched but found nothing!');
+      setActionPoints(actionPoints - 1);
+      return;
+    }
+
+    // Get items not in inventory
+    const availableItems = equipmentCards.filter(card => 
+      !equipment.some(item => item.id === card.id)
+    );
+
+    if (availableItems.length > 0) {
+      const randomCard =
+        availableItems[Math.floor(Math.random() * availableItems.length)];
+      setEquipment([...equipment, randomCard]);
+      alert(`Found ${randomCard.name}!`);
+    } else {
+      alert('You found nothing new!');
+    }
     setActionPoints(actionPoints - 1);
   };
 
@@ -417,6 +434,19 @@ export const GameBoard = ({ selectedCharacter }) => {
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
+      {/* Game Messages */}
+      <div className="text-center">
+        {gameWon ? (
+          <div className="text-4xl font-bold text-green-500 mb-4">
+            You Win!
+          </div>
+        ) : gameOver ? (
+          <div className="text-4xl font-bold text-red-500 mb-4">
+            Game Over!
+          </div>
+        ) : null}
+      </div>
+
       {/* Top Section */}
       <div className="max-w-[1400px] mx-auto">
         <div className="flex justify-between items-center mb-4">
@@ -501,16 +531,6 @@ export const GameBoard = ({ selectedCharacter }) => {
         </div>
       </div>
 
-      {gameWon && (
-        <div className="text-center text-4xl font-bold text-green-500 mb-4">
-          You Win!
-        </div>
-      )}
-      {gameOver && (
-        <div className="text-center text-4xl font-bold text-red-500 mb-4">
-          Game Over!
-        </div>
-      )}
     </div>
   );
 };
