@@ -4,7 +4,6 @@ import React from 'react';
     export const EquipmentDisplay = ({ equipment }) => {
       return (
         <div className="mb-4 max-w-2xl w-full">
-          <p className="font-bold text-xl">Equipment:</p>
           <ul className="list-disc list-inside">
             {equipment.map((card, index) => (
               <li key={index} className="flex items-center">

@@ -15,8 +15,9 @@ import React from 'react';
       handleEndTurn,
     }) => {
       return (
+        <div>
         <div className="flex space-x-4 mb-4">
-          <div className="flex space-x-2 mt-4">
+          <div className="flex space-x mt-4">
             <button
               onClick={() => handleMove('up')}
               className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -24,8 +25,6 @@ import React from 'react';
             >
               <ArrowUp size={20} />
             </button>
-          </div>
-          <div className="flex space-x-2">
             <button
               onClick={() => handleMove('left')}
               className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -40,8 +39,6 @@ import React from 'react';
             >
               <ArrowRight size={20} />
             </button>
-          </div>
-          <div className="flex space-x-2 mt-4">
             <button
               onClick={() => handleMove('down')}
               className="bg-gray-700 hover:bg-gray-600 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -50,7 +47,9 @@ import React from 'react';
               <ArrowDown size={20} />
             </button>
           </div>
+          </div>
 
+          <div className="flex space-x-4 mb-4">
           <div className="flex space-x-4 mt-4">
             <button
               onClick={handleSearch}
@@ -68,6 +67,7 @@ import React from 'react';
               <Axe size={20} className="inline-block mr-2" />
               Attack
             </button>
+          </div>
           </div>
         </div>
       );

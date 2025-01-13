@@ -4,7 +4,6 @@ import React from 'react';
     export const GameStats = ({ turn, actionPoints, playerHealth }) => {
       return (
         <div className="mb-4 w-full text-left">
-          <p className="font-bold text-xl">Stats:</p>
           <p>
             Turn: <span className="font-bold">{turn}</span>
           </p>
