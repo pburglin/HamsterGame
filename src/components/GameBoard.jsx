@@ -451,6 +451,10 @@ export const GameBoard = ({ selectedCharacter }) => {
       <div className="max-w-[1400px] mx-auto">
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-4xl font-bold">Game Board</h2>
+          <div className="text-center mb-6">
+          <GameMission mission={mission} />
+        </div>
+
           <button
             onClick={handleResetGame}
             className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -458,11 +462,7 @@ export const GameBoard = ({ selectedCharacter }) => {
             <RefreshCcw size={20} className="inline-block mr-2" />
             Reset
           </button>
-        </div>
-        
-        <div className="text-center mb-6">
-          <GameMission mission={mission} />
-        </div>
+        </div>        
       </div>
 
       {/* Main Content Area */}
