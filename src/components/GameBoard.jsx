@@ -149,6 +149,12 @@ import React, { useRef, useEffect, useState } from 'react';
         equipment,
       ]);
 
+      useEffect(() => {
+        if (actionPoints === 0 && !gameWon && !gameOver) {
+          handleEndTurn();
+        }
+      }, [actionPoints, gameWon, gameOver]);
+
       const handleMove = (direction) => {
         if (actionPoints <= 0 || gameWon || gameOver) return;
         let newX = characterPosition.x;

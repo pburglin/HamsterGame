@@ -69,12 +69,6 @@ import React from 'react';
               Attack
             </button>
           </div>
-          <button
-            onClick={handleEndTurn}
-            className="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            End Turn
-          </button>
         </div>
       );
     };
