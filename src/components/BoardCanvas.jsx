@@ -40,14 +40,7 @@ import React, { useEffect } from 'react';
         };
 
         const getTileColor = (tileType) => {
-          switch (tileType) {
-            case 'wall':
-              return '#6b7280';
-            case 'street':
-              return '#9ca3af';
-            default:
-              return 'white';
-          }
+          return tileType === 'wall' ? '#444444' : '#9ca3af';
         };
 
         const drawCharacter = (ctx, character, tileSize) => {

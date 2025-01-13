@@ -1,4 +1,5 @@
 import React, { useRef, useEffect, useState } from 'react';
+import { maps } from '../maps';
 import {
   ArrowUp,
   ArrowDown,
@@ -33,8 +34,10 @@ export const GameBoard = ({ selectedCharacter }) => {
     objectives: ['Reach the extraction point'],
   });
   const tileSize = 30;
-  const boardWidth = 20;
-  const boardHeight = 15;
+  const [currentMapIndex, setCurrentMapIndex] = useState(0);
+  const currentMap = maps[currentMapIndex];
+  const boardWidth = currentMap.width;
+  const boardHeight = currentMap.height;
   const initialCharacterPosition = { x: 2, y: 2 };
   const [characterPosition, setCharacterPosition] = useState(
     initialCharacterPosition
@@ -86,18 +89,9 @@ export const GameBoard = ({ selectedCharacter }) => {
     for (let y = 0; y < boardHeight; y++) {
       const row = [];
       for (let x = 0; x < boardWidth; x++) {
-        let tileType = 'street';
-        if (
-          x === 0 ||
-          x === boardWidth - 1 ||
-          y === 0 ||
-          y === boardHeight - 1
-        ) {
-          tileType = 'wall';
-        } else if ((x === 5 || x === 15) && y > 2 && y < 12) {
-          tileType = 'wall';
-        }
-        row.push({ type: tileType });
+        // Check if current position is a wall
+        const isWall = currentMap.walls.some(wall => wall.x === x && wall.y === y);
+        row.push({ type: isWall ? 'wall' : 'street' });
       }
       newBoard.push(row);
     }
@@ -340,8 +334,17 @@ export const GameBoard = ({ selectedCharacter }) => {
       characterPosition.x === extractionPoint.x &&
       characterPosition.y === extractionPoint.y
     ) {
-      setGameWon(true);
-      alert('You reached the extraction point! You win!');
+      if (currentMapIndex < maps.length - 1) {
+        setCurrentMapIndex(currentMapIndex + 1);
+        setBoard(generateBoard()); // Generate board after updating map index
+        setCharacterPosition({ x: 2, y: 2 });
+        setZombies([]);
+        setActionPoints(3);
+        alert(`Map cleared! Moving to map ${currentMapIndex + 2}`);
+      } else {
+        setGameWon(true);
+        alert('You completed all maps and found the cure! Humanity is saved from the zombies!');
+      }
     }
   };
 
@@ -437,8 +440,16 @@ export const GameBoard = ({ selectedCharacter }) => {
       {/* Game Messages */}
       <div className="text-center">
         {gameWon ? (
-          <div className="text-4xl font-bold text-green-500 mb-4">
-            You Win!
+          <div className="text-center space-y-4">
+            <div className="text-6xl font-bold text-green-500 animate-bounce">
+              You Win!
+            </div>
+            <div className="text-2xl text-green-300">
+              You found the cure and saved humanity from the zombie apocalypse!
+            </div>
+            <div className="text-xl text-green-200">
+              Congratulations on completing all 10 challenging missions!
+            </div>
           </div>
         ) : gameOver ? (
           <div className="text-4xl font-bold text-red-500 mb-4">
