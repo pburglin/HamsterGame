@@ -42,11 +42,11 @@ export const maps = [
     ],
     zombieSpawnPoints: [
       {x: 2, y: 2},
-      {x: 13, y: 2},
-      {x: 27, y: 2},
-      {x: 2, y: 22},
-      {x: 13, y: 22},
-      {x: 27, y: 22}
+      {x: 12, y: 2},
+      {x: 22, y: 2},
+      {x: 2, y: 17},
+      {x: 12, y: 17},
+      {x: 22, y: 17}
     ],
     extractionPoint: {x: 27, y: 20},
     mission: {
@@ -64,12 +64,12 @@ export const maps = [
       ...Array.from({length: 30}, (_, x) => ({x, y: 19})),
       ...Array.from({length: 20}, (_, y) => ({x: 0, y})),
       ...Array.from({length: 20}, (_, y) => ({x: 29, y})),
-      ...Array.from({length: 15}, (_, i) => ({x: 5 + i*2, y: 5})),
-      ...Array.from({length: 15}, (_, i) => ({x: 5 + i*2, y: 10})),
-      ...Array.from({length: 15}, (_, i) => ({x: 5 + i*2, y: 15})),
-      ...Array.from({length: 10}, (_, i) => ({x: 5, y: 5 + i*2})),
-      ...Array.from({length: 10}, (_, i) => ({x: 15, y: 5 + i*2})),
-      ...Array.from({length: 10}, (_, i) => ({x: 25, y: 5 + i*2}))
+      ...Array.from({length: 15}, (_, i) => ({x: 3 + i*2, y: 2})),
+      ...Array.from({length: 15}, (_, i) => ({x: 3 + i*2, y: 10})),
+      ...Array.from({length: 15}, (_, i) => ({x: 3 + i*2, y: 15})),
+      ...Array.from({length: 10}, (_, i) => ({x: 3, y: 3 + i*2})),
+      ...Array.from({length: 10}, (_, i) => ({x: 15, y: 3 + i*2})),
+      ...Array.from({length: 10}, (_, i) => ({x: 25, y: 3 + i*2}))
     ],
     zombieSpawnPoints: [
       {x: 3, y: 3},
@@ -77,7 +77,7 @@ export const maps = [
       {x: 3, y: 16},
       {x: 26, y: 16}
     ],
-    extractionPoint: {x: 15, y: 10},
+    extractionPoint: {x: 28, y: 10},
     mission: {
       description: 'Cross the dangerous checkerboard to reach safety',
       objectives: ['Reach the center point']
@@ -107,7 +107,7 @@ export const maps = [
       {x: 35, y: 25},
       {x: 20, y: 15}
     ],
-    extractionPoint: {x: 20, y: 15},
+    extractionPoint: {x: 27, y: 17},
     mission: {
       description: 'Final challenge: Find the cure in the center of the maze',
       objectives: ['Reach the center', 'Collect the cure']

@@ -47,13 +47,8 @@ export const GameBoard = ({ selectedCharacter }) => {
   const [gameOver, setGameOver] = useState(false);
   const [hitTiles, setHitTiles] = useState([]);
 
-  const zombieSpawnPoints = [
-    { x: 1, y: 1 },
-    { x: 18, y: 1 },
-    { x: 1, y: 13 },
-    { x: 18, y: 13 },
-  ];
-  const extractionPoint = { x: 18, y: 7 };
+  const zombieSpawnPoints = currentMap.zombieSpawnPoints;
+  const extractionPoint = currentMap.extractionPoint;
 
   const equipmentCards = [
     {
@@ -306,16 +301,27 @@ export const GameBoard = ({ selectedCharacter }) => {
   };
 
   const spawnZombies = () => {
-    const numZombiesToSpawn = Math.floor(Math.random() * 4);
     const newZombies = [];
-    for (let i = 0; i < numZombiesToSpawn; i++) {
-      const spawnPoint =
-        zombieSpawnPoints[
-          Math.floor(Math.random() * zombieSpawnPoints.length)
-        ];
-      const zombieTypes = ['walker', 'runner', 'fatty'];
-      const randomType =
-        zombieTypes[Math.floor(Math.random() * zombieTypes.length)];
+    const zombieTypes = ['walker', 'runner', 'fatty'];
+    
+    // Process all spawn points
+    zombieSpawnPoints.forEach(spawnPoint => {
+      // 50% chance to spawn at each point
+      if (Math.random() < 0.5) {
+        const randomType = zombieTypes[Math.floor(Math.random() * zombieTypes.length)];
+        newZombies.push({
+          x: spawnPoint.x,
+          y: spawnPoint.y,
+          type: randomType,
+          health: randomType === 'fatty' ? 3 : 1,
+        });
+      }
+    });
+
+    // Ensure at least one zombie spawns if there are spawn points
+    if (zombieSpawnPoints.length > 0 && newZombies.length === 0) {
+      const spawnPoint = zombieSpawnPoints[Math.floor(Math.random() * zombieSpawnPoints.length)];
+      const randomType = zombieTypes[Math.floor(Math.random() * zombieTypes.length)];
       newZombies.push({
         x: spawnPoint.x,
         y: spawnPoint.y,
@@ -323,6 +329,7 @@ export const GameBoard = ({ selectedCharacter }) => {
         health: randomType === 'fatty' ? 3 : 1,
       });
     }
+
     setZombies((prevZombies) => [...prevZombies, ...newZombies]);
   };
 
@@ -336,6 +343,7 @@ export const GameBoard = ({ selectedCharacter }) => {
         setCharacterPosition({ x: 2, y: 2 });
         setZombies([]);
         setActionPoints(3);
+        console.log('zombieSpawnPoints: ', zombieSpawnPoints);
         alert(`Map cleared! Moving to map ${currentMapIndex + 2}`);
       } else {
         setGameWon(true);
