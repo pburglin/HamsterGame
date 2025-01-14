@@ -19,7 +19,7 @@ export const maps = [
       {x: 1, y: 13},
       {x: 18, y: 13}
     ],
-    extractionPoint: {x: 18, y: 7},
+    extractionPoint: {x: 18, y: 8},
     mission: {
       description: 'Survive the zombie horde and reach the extraction point',
       objectives: ['Reach the extraction point']
@@ -42,11 +42,13 @@ export const maps = [
     ],
     zombieSpawnPoints: [
       {x: 2, y: 2},
-      {x: 22, y: 2},
-      {x: 2, y: 17},
-      {x: 22, y: 17}
+      {x: 13, y: 2},
+      {x: 27, y: 2},
+      {x: 2, y: 22},
+      {x: 13, y: 22},
+      {x: 27, y: 22}
     ],
-    extractionPoint: {x: 12, y: 10},
+    extractionPoint: {x: 27, y: 20},
     mission: {
       description: 'Navigate the maze and reach the safe zone',
       objectives: ['Reach the safe zone']

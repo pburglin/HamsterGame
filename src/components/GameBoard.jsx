@@ -451,7 +451,7 @@ export const GameBoard = ({ selectedCharacter }) => {
               You found the cure and saved humanity from the zombie apocalypse!
             </div>
             <div className="text-xl text-green-200">
-              Congratulations on completing all 10 challenging missions!
+              Congratulations on completing all challenging missions!
             </div>
           </div>
         ) : gameOver ? (
@@ -464,7 +464,7 @@ export const GameBoard = ({ selectedCharacter }) => {
       {/* Top Section */}
       <div className="max-w-[1400px] mx-auto">
         <div className="flex justify-between items-center mb-4">
-          <h2 className="text-4xl font-bold">Game Board</h2>
+          <h2 className="text-4xl font-bold"></h2>
           <div className="text-center mb-6">
           <GameMission mission={mission} />
         </div>

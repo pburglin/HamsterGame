@@ -156,8 +156,8 @@ import React, { useEffect } from 'react';
       return (
         <canvas
           ref={canvasRef}
-          width="600"
-          height="450"
+          width={boardWidth * tileSize}
+          height={boardHeight * tileSize}
           className="border border-gray-700 rounded-md shadow-lg"
         ></canvas>
       );
