@@ -48,7 +48,7 @@ export const maps = [
       {x: 12, y: 17},
       {x: 22, y: 17}
     ],
-    extractionPoint: {x: 27, y: 20},
+    extractionPoint: {x: 22, y: 12},
     mission: {
       description: 'Navigate the maze and reach the safe zone',
       objectives: ['Reach the safe zone']
