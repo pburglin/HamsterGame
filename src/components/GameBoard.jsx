@@ -336,7 +336,6 @@ export const GameBoard = ({ selectedCharacter }) => {
     ) {
       if (currentMapIndex < maps.length - 1) {
         setCurrentMapIndex(currentMapIndex + 1);
-        setBoard(generateBoard()); // Generate board after updating map index
         setCharacterPosition({ x: 2, y: 2 });
         setZombies([]);
         setActionPoints(3);
@@ -347,6 +346,10 @@ export const GameBoard = ({ selectedCharacter }) => {
       }
     }
   };
+
+  useEffect(() => {
+    setBoard(generateBoard());
+  }, [currentMapIndex]);
 
   const handleUseMedkit = () => {
     if (gameOver || gameWon) return;

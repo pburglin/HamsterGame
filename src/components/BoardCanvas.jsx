@@ -20,9 +20,13 @@ import React, { useEffect } from 'react';
 
         const drawBoard = () => {
           ctx.clearRect(0, 0, canvas.width, canvas.height);
+          if (!board) return;
           for (let y = 0; y < boardHeight; y++) {
+            if (!board[y]) continue;
             for (let x = 0; x < boardWidth; x++) {
-              const tileType = board[y][x].type;
+              const tile = board[y][x];
+              if (!tile) continue;
+              const tileType = tile.type || 'empty';
               ctx.fillStyle = getTileColor(tileType);
               ctx.fillRect(x * tileSize, y * tileSize, tileSize, tileSize);
               ctx.strokeStyle = 'rgba(0, 0, 0, 0.1)';
