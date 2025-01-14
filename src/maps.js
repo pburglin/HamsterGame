@@ -72,9 +72,11 @@ export const maps = [
       ...Array.from({length: 10}, (_, i) => ({x: 25, y: 3 + i*2}))
     ],
     zombieSpawnPoints: [
-      {x: 3, y: 3},
+      {x: 7, y: 3},
+      {x: 16, y: 3},
       {x: 26, y: 3},
-      {x: 3, y: 16},
+      {x: 7, y: 16},
+      {x: 16, y: 16},
       {x: 26, y: 16}
     ],
     extractionPoint: {x: 28, y: 10},
@@ -101,11 +103,12 @@ export const maps = [
       ...Array.from({length: 10}, (_, y) => ({x: 25, y: y + 15}))
     ],
     zombieSpawnPoints: [
-      {x: 5, y: 5},
-      {x: 35, y: 5},
-      {x: 5, y: 25},
-      {x: 35, y: 25},
-      {x: 20, y: 15}
+      {x: 4, y: 5},
+      {x: 12, y: 7},
+      {x: 30, y: 5},
+      {x: 10, y: 25},
+      {x: 29, y: 19},
+      {x: 19, y: 15}
     ],
     extractionPoint: {x: 27, y: 17},
     mission: {
