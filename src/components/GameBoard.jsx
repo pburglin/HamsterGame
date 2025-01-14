@@ -29,10 +29,7 @@ export const GameBoard = ({ selectedCharacter }) => {
   const [turn, setTurn] = useState(1);
   const [actionPoints, setActionPoints] = useState(3);
   const [zombies, setZombies] = useState([]);
-  const [mission, setMission] = useState({
-    description: 'Survive the zombie horde and reach the extraction point',
-    objectives: ['Reach the extraction point'],
-  });
+  const [mission, setMission] = useState(maps[0].mission);
   const tileSize = 30;
   const [currentMapIndex, setCurrentMapIndex] = useState(0);
   const currentMap = maps[currentMapIndex];
@@ -349,6 +346,7 @@ export const GameBoard = ({ selectedCharacter }) => {
 
   useEffect(() => {
     setBoard(generateBoard());
+    setMission(maps[currentMapIndex].mission);
   }, [currentMapIndex]);
 
   const handleUseMedkit = () => {
