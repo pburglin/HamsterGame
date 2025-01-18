@@ -132,11 +132,7 @@ import React, { useEffect } from 'react';
           ctx.font = '12px sans-serif';
           ctx.textAlign = 'center';
           ctx.textBaseline = 'middle';
-          ctx.fillText(
-            <Home size={16} />,
-            extractionPoint.x * tileSize + tileSize / 2,
-            extractionPoint.y * tileSize + tileSize / 2
-          );
+          // No text needed - green circle indicates extraction point
         };
 
         drawBoard();

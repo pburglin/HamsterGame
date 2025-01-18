@@ -266,10 +266,28 @@ export const GameBoard = ({ selectedCharacter }) => {
         let newY = zombie.y;
 
         if (zombie.type === 'runner') {
+          // First movement step
+          let step1X = zombie.x;
+          let step1Y = zombie.y;
+          
           if (absDx > absDy) {
-            newX = zombie.x + (dx > 0 ? 1 : -2);
+            step1X = zombie.x + (dx > 0 ? 1 : -1);
           } else if (absDy > 0) {
-            newY = zombie.y + (dy > 0 ? 1 : -2);
+            step1Y = zombie.y + (dy > 0 ? 1 : -1);
+          }
+          
+          // Check if first step is valid
+          if (
+            board[step1Y] &&
+            board[step1Y][step1X] &&
+            board[step1Y][step1X].type !== 'wall'
+          ) {
+            // Second movement step
+            if (absDx > absDy) {
+              newX = step1X + (dx > 0 ? 1 : -1);
+            } else if (absDy > 0) {
+              newY = step1Y + (dy > 0 ? 1 : -1);
+            }
           }
         } else {
           if (absDx > absDy) {
@@ -279,6 +297,7 @@ export const GameBoard = ({ selectedCharacter }) => {
           }
         }
 
+        // Final position check
         if (
           board[newY] &&
           board[newY][newX] &&
