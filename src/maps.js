@@ -105,24 +105,32 @@ export const maps = [
     width: 40,
     height: 30,
     walls: [
-      // Final challenge map
+      // Outer walls
       ...Array.from({length: 40}, (_, x) => ({x, y: 0})),
       ...Array.from({length: 40}, (_, x) => ({x, y: 29})),
       ...Array.from({length: 30}, (_, y) => ({x: 0, y})),
       ...Array.from({length: 30}, (_, y) => ({x: 39, y})),
-      // Complex maze pattern
-      ...Array.from({length: 25}, (_, x) => ({x: x + 5, y: 5})),
+      // More complex maze pattern
+      ...Array.from({length: 30}, (_, x) => ({x: x + 5, y: 5})),
+      ...Array.from({length: 17}, (_, y) => ({x: 5, y: y + 5})),
       ...Array.from({length: 20}, (_, y) => ({x: 10, y: y + 5})),
-      ...Array.from({length: 15}, (_, x) => ({x: x + 20, y: 15})),
-      ...Array.from({length: 10}, (_, y) => ({x: 25, y: y + 15}))
+      ...Array.from({length: 17}, (_, y) => ({x: 15, y: y + 5})),
+      ...Array.from({length: 20}, (_, y) => ({x: 20, y: y + 5})),
+      ...Array.from({length: 17}, (_, y) => ({x: 25, y: y + 5})),
+      ...Array.from({length: 20}, (_, y) => ({x: 30, y: y + 5})),
+      ...Array.from({length: 17}, (_, y) => ({x: 35, y: y + 5})),
+      ...Array.from({length: 5}, (_, x) => ({x: x + 5, y: 25})),
+      ...Array.from({length: 5}, (_, x) => ({x: x + 15, y: 25})),
+      ...Array.from({length: 5}, (_, x) => ({x: x + 25, y: 25})),
+      ...Array.from({length: 5}, (_, x) => ({x: x + 30, y: 25})),
     ],
     zombieSpawnPoints: [
-      {x: 4, y: 5},
-      {x: 12, y: 7},
-      {x: 30, y: 5},
+      {x: 4, y: 19},
+      {x: 11, y: 19},
+      {x: 21, y: 19},
       {x: 10, y: 25},
       {x: 29, y: 19},
-      {x: 19, y: 15}
+      {x: 19, y: 19}
     ],
     extractionPoint: {x: 27, y: 17},
     mission: {
