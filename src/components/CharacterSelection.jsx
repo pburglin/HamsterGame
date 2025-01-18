@@ -27,7 +27,7 @@ const characters = [
     ability: 'Increased movement speed',
     icon: <Zap size={48} />,
     image:
-      'https://cdn.imgbin.com/8/23/22/imgbin-hamster-anime-kavaii-hamster-hamtaro-illustration-40Lk83SGNSpWkHDmEtE31KZde.jpg',
+      'https://img.freepik.com/premium-psd/png-captivating-kawaii-anime-hamster-girl-with-hamster-cheek-creative-chibi-sticker-collection_1020495-344760.jpg',
   },
   {
     id: 'olivia',
@@ -36,7 +36,7 @@ const characters = [
     ability: 'Faster movement on streets',
     icon: <Shield size={48} />,
     image:
-      'https://img.freepik.com/premium-psd/png-captivating-kawaii-anime-hamster-girl-with-hamster-cheek-creative-chibi-sticker-collection_1020495-344760.jpg',
+      'https://cdn.imgbin.com/8/23/22/imgbin-hamster-anime-kavaii-hamster-hamtaro-illustration-40Lk83SGNSpWkHDmEtE31KZde.jpg',
   },
 ];
 
