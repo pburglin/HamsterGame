@@ -10,12 +10,24 @@ import React, { useState } from 'react';
       };
 
       return (
-        <div className="font-sans bg-gray-900 text-white">
-          {selectedCharacter ? (
-            <GameBoard selectedCharacter={selectedCharacter} />
-          ) : (
-            <CharacterSelection onSelect={handleCharacterSelect} />
-          )}
+        <div className="font-sans bg-gray-900 text-white min-h-screen flex flex-col">
+          <main className="flex-grow">
+            {selectedCharacter ? (
+              <GameBoard selectedCharacter={selectedCharacter} />
+            ) : (
+              <CharacterSelection onSelect={handleCharacterSelect} />
+            )}
+          </main>
+          <footer className="bg-gray-800 py-4 text-center text-sm text-gray-400">
+            <a
+              href="https://github.com/pburglin/HamsterGame"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-white transition-colors"
+            >
+              View on GitHub
+            </a>
+          </footer>
         </div>
       );
     }
