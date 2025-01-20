@@ -92,6 +92,57 @@ export const CharacterSelection = ({ onSelect }) => {
             </div>
           ))}
         </div>
+        
+        {/* Zombie Types Section */}
+        <div className="mt-20 max-w-6xl w-full p-6">
+          <h2 className="text-5xl font-bold mb-10 text-center text-white drop-shadow-lg">
+            Zombie Types
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {[
+              {
+                type: 'Walker',
+                description: 'Slow but relentless',
+                ability: 'Basic zombie - moves 1 space per turn',
+                image: '/zombie-walker.webp'
+              },
+              {
+                type: 'Runner',
+                description: 'Fast and aggressive',
+                ability: 'Moves 2 spaces per turn, can attack immediately',
+                image: '/zombie-runner.webp'
+              },
+              {
+                type: 'Fatty',
+                description: 'Massive and terrifying',
+                ability: 'High healt',
+                image: '/zombie-abomination.webp'
+              }
+            ].map((zombie, index) => (
+              <div
+                key={index}
+                className="bg-gray-800 bg-opacity-70 shadow-md rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl"
+              >
+                <img
+                  src={zombie.image}
+                  alt={zombie.type}
+                  className="w-full h-64 object-cover"
+                />
+                <div className="p-6">
+                  <h3 className="text-2xl font-semibold text-white mb-4">
+                    {zombie.type}
+                  </h3>
+                  <p className="text-gray-300 mb-2">
+                    <span className="font-medium">Description:</span> {zombie.description}
+                  </p>
+                  <p className="text-gray-300">
+                    <span className="font-medium">Ability:</span> {zombie.ability}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   );
