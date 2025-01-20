@@ -110,13 +110,13 @@ export const CharacterSelection = ({ onSelect }) => {
                 type: 'Runner',
                 description: 'Fast and aggressive',
                 ability: 'Moves 2 spaces per turn, can attack immediately',
-                image: '/zombie-runner.webp'
+                image: '/zombie-runner.png'
               },
               {
                 type: 'Fatty',
                 description: 'Massive and terrifying',
-                ability: 'High healt',
-                image: '/zombie-abomination.webp'
+                ability: 'High health',
+                image: '/zombie-abomination.png'
               }
             ].map((zombie, index) => (
               <div
