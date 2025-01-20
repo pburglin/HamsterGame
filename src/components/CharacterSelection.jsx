@@ -104,7 +104,7 @@ export const CharacterSelection = ({ onSelect }) => {
                 type: 'Walker',
                 description: 'Slow but relentless',
                 ability: 'Basic zombie - moves 1 space per turn',
-                image: '/zombie-walker.webp'
+                image: '/zombie-walker.png'
               },
               {
                 type: 'Runner',
