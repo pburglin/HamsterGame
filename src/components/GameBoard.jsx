@@ -69,7 +69,7 @@ export const GameBoard = ({ selectedCharacter }) => {
     },
     {
       id: 'medkit',
-      name: 'Medkit',
+      name: '[M]edkit',
       heal: 2,
       icon: <span className="text-sm"></span>,
       description: 'A medkit to heal wounds.',
@@ -501,7 +501,7 @@ export const GameBoard = ({ selectedCharacter }) => {
             <RefreshCcw size={20} className="inline-block mr-2" />
             Reset
           </button>
-        </div>        
+        </div>
       </div>
 
       {/* Main Content Area */}

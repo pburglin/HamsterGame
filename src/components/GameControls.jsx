@@ -57,7 +57,7 @@ import React from 'react';
               title="Search for items"
             >
               <Search size={20} className="inline-block mr-2" />
-              Search
+              [S]earch
             </button>
             <button
               onClick={handleAttack}
@@ -65,7 +65,7 @@ import React from 'react';
               title="Attack zombies"
             >
               <Axe size={20} className="inline-block mr-2" />
-              Attack
+              [A]ttack
             </button>
           </div>
           </div>
