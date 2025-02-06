@@ -10,7 +10,7 @@ import React, { useState } from 'react';
       };
 
       return (
-        <div className="font-sans bg-gray-900 text-white min-h-screen flex flex-col">
+        <div className="font-sans bg-gray-900 text-white min-h-screen h-full flex flex-col overflow-x-hidden">
           <main className="flex-grow">
             {selectedCharacter ? (
               <GameBoard selectedCharacter={selectedCharacter} />
