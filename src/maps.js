@@ -82,8 +82,10 @@ export const maps = [
       ...Array.from({length: 15}, (_, i) => ({x: 3 + i*2, y: 10})),
       ...Array.from({length: 15}, (_, i) => ({x: 3 + i*2, y: 15})),
       ...Array.from({length: 10}, (_, i) => ({x: 3, y: 3 + i*2})),
-      ...Array.from({length: 10}, (_, i) => ({x: 15, y: 3 + i*2})),
-      ...Array.from({length: 10}, (_, i) => ({x: 25, y: 3 + i*2}))
+      ...Array.from({length: 15}, (_, i) => ({x: 15, y: 4 + i})),
+      ...Array.from({length: 10}, (_, i) => ({x: 25, y: 3 + i*2})),
+      ...Array.from({length: 7}, (_, i) => ({x: 25, y: 2 + i*2})),
+      {x: 25, y: 1}, {x: 25, y: 4},
     ],
     zombieSpawnPoints: [
       {x: 7, y: 3},
