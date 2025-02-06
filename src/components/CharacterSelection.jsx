@@ -9,7 +9,7 @@ const characters = [
     ability: 'Extra search action',
     icon: <User size={48} />,
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0CSMf2ORqmNVKxRJLsoHFePU_SSaOjFQwdA&s',
+      'dave.png',
   },
   {
     id: 'dan',
@@ -18,7 +18,7 @@ const characters = [
     ability: 'Medkit starter',
     icon: <Heart size={48} />,
     image:
-      'https://img.freepik.com/free-vector/cute-hamster-eating-sunflower-seed-cartoon-character-animal-food-isolated_138676-3145.jpg',
+      'dan.png',
   },
   {
     id: 'stela',
@@ -27,7 +27,7 @@ const characters = [
     ability: 'Increased movement speed',
     icon: <Zap size={48} />,
     image:
-      'https://img.freepik.com/premium-psd/png-captivating-kawaii-anime-hamster-girl-with-hamster-cheek-creative-chibi-sticker-collection_1020495-344760.jpg',
+      'stela.png',
   },
   {
     id: 'olivia',
@@ -36,7 +36,7 @@ const characters = [
     ability: 'Faster movement on streets',
     icon: <Shield size={48} />,
     image:
-      'https://cdn.imgbin.com/8/23/22/imgbin-hamster-anime-kavaii-hamster-hamtaro-illustration-40Lk83SGNSpWkHDmEtE31KZde.jpg',
+      'olivia.png',
   },
 ];
 
@@ -52,7 +52,7 @@ export const CharacterSelection = ({ onSelect }) => {
       <div className="absolute inset-0 bg-black opacity-60"></div>
       <div className="relative z-10 flex flex-col items-center justify-center min-h-screen">
         <h1 className="text-5xl font-bold mb-10 text-center text-white drop-shadow-lg">
-          Hamster Game
+          Hamstercide
         </h1>
         <h2 className="text-5xl font-bold mb-10 text-center text-white drop-shadow-lg">
           Select Your Character

@@ -525,7 +525,7 @@ export const GameBoard = ({ selectedCharacter }) => {
           </div>
 
           {/* Right Column - Player Stats */}
-          <div className="bg-gray-800 p-4 rounded-lg overflow-y-auto max-h-[calc(100vh-200px)]">
+          <div className="bg-gray-800 p-4 rounded-lg overflow-y-auto]">
             <div className="space-y-6 p-2">
               {/* Stats Section */}
               <section className="bg-gray-700/50 p-4 rounded-lg">
