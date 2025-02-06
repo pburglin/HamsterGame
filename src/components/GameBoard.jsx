@@ -494,13 +494,22 @@ export const GameBoard = ({ selectedCharacter }) => {
           <GameMission mission={mission} />
         </div>
 
-          <button
-            onClick={handleResetGame}
-            className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-          >
-            <RefreshCcw size={20} className="inline-block mr-2" />
-            Reset
-          </button>
+          <div className="space-x-4">
+            <button
+              onClick={() => window.location.reload()}
+              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              <Home size={20} className="inline-block mr-2" />
+              Home
+            </button>
+            <button
+              onClick={handleResetGame}
+              className="bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+            >
+              <RefreshCcw size={20} className="inline-block mr-2" />
+              Reset
+            </button>
+          </div>
         </div>
       </div>
 
