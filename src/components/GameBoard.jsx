@@ -508,7 +508,7 @@ export const GameBoard = ({ selectedCharacter }) => {
       <div className="max-w-[1400px] mx-auto">
         <div className="grid grid-cols-[1fr_300px] gap-8">
           {/* Left Column - Board */}
-          <div>
+          <div className="mx-auto">
             <BoardCanvas
               canvasRef={canvasRef}
               boardWidth={boardWidth}
