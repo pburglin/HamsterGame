@@ -61,7 +61,8 @@ export const CharacterSelection = ({ onSelect }) => {
           {characters.map((character) => (
             <div
               key={character.id}
-              className="bg-gray-800 bg-opacity-70 shadow-md rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl"
+              onClick={() => onSelect(character)}
+              className="bg-gray-800 bg-opacity-70 shadow-md rounded-lg overflow-hidden transform transition-transform hover:scale-105 hover:shadow-xl cursor-pointer"
             >
               <img
                 src={character.image}
@@ -82,12 +83,6 @@ export const CharacterSelection = ({ onSelect }) => {
                   <span className="font-medium">Ability:</span>{' '}
                   {character.ability}
                 </p>
-                <button
-                  onClick={() => onSelect(character)}
-                  className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded focus:outline-none focus:shadow-outline w-full transform transition-transform hover:scale-105"
-                >
-                  Select
-                </button>
               </div>
             </div>
           ))}
