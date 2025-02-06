@@ -120,7 +120,7 @@ export const maps = [
       ...Array.from({length: 20}, (_, y) => ({x: 20, y: y + 10})),
       ...Array.from({length: 17}, (_, y) => ({x: 25, y: y + 5})),
       ...Array.from({length: 20}, (_, y) => ({x: 30, y: y + 10})),
-      ...Array.from({length: 17}, (_, y) => ({x: 35, y: y + 5})),
+      ...Array.from({length: 19}, (_, y) => ({x: 35, y: y + 5})),
       ...Array.from({length: 5}, (_, x) => ({x: x + 5, y: 25})),
       ...Array.from({length: 5}, (_, x) => ({x: x + 15, y: 25})),
       ...Array.from({length: 5}, (_, x) => ({x: x + 25, y: 25})),
@@ -133,9 +133,13 @@ export const maps = [
       {x: 10, y: 25},
       {x: 29, y: 19},
       {x: 31, y: 19},
+      {x: 4, y: 9},
+      {x: 36, y: 9},
+      {x: 36, y: 19},
+      {x: 21, y: 4},
       {x: 19, y: 19}
     ],
-    extractionPoint: {x: 33, y: 17},
+    extractionPoint: {x: 23, y: 17},
     mission: {
       description: 'Final challenge: Find the cure in the center of the maze',
       objectives: ['Reach the center', 'Collect the cure']
