@@ -2,6 +2,8 @@
 
 A thrilling survival game where hamsters must defend against waves of zombies!
 
+Check it out ![here](https://rocketzombie.netlify.app/), or follow the steps below to setup a local instance.
+
 ## Screenshots
 
 ![Hamster Hero](./Hamster.png)
@@ -28,7 +30,7 @@ A thrilling survival game where hamsters must defend against waves of zombies!
    ```bash
    npm run dev
    ```
-4. Open http://localhost:5173 in your browser
+4. Open ![http://localhost:5173](http://localhost:5173) in your browser; adjust the URL if your node app is using a different port.
 
 ## Game Features
 
