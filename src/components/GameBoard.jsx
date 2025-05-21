@@ -81,9 +81,16 @@ export const GameBoard = ({ selectedCharacter }) => {
     for (let y = 0; y < boardHeight; y++) {
       const row = [];
       for (let x = 0; x < boardWidth; x++) {
-        // Check if current position is a wall
+        // Check if current position is a wall or a room
         const isWall = currentMap.walls.some(wall => wall.x === x && wall.y === y);
-        row.push({ type: isWall ? 'wall' : 'street' });
+        const isRoom = currentMap.rooms && currentMap.rooms.some(room => room.x === x && room.y === y);
+        let tileType = 'street';
+        if (isWall) {
+          tileType = 'wall';
+        } else if (isRoom) {
+          tileType = 'room';
+        }
+        row.push({ type: tileType });
       }
       newBoard.push(row);
     }
@@ -171,7 +178,14 @@ export const GameBoard = ({ selectedCharacter }) => {
 
   const handleSearch = () => {
     if (actionPoints <= 0 || gameWon || gameOver) return;
-    
+
+    const { x, y } = characterPosition;
+    if (board[y][x].type !== 'room') {
+      alert('You can only search in rooms!');
+      setActionPoints(actionPoints - 1);
+      return;
+    }
+
     // 30% chance to find nothing
     if (Math.random() < 0.3) {
       alert('You searched but found nothing!');

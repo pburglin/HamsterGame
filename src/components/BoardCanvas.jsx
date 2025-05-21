@@ -44,7 +44,13 @@ import React, { useEffect } from 'react';
         };
 
         const getTileColor = (tileType) => {
-          return tileType === 'wall' ? '#444444' : '#9ca3af';
+          if (tileType === 'wall') {
+            return '#444444'; // Dark gray for walls
+          } else if (tileType === 'room') {
+            return '#7f8c8d'; // A darker shade of gray for rooms
+          } else {
+            return '#9ca3af'; // Light gray for street/empty tiles
+          }
         };
 
         const drawCharacter = (ctx, character, tileSize) => {

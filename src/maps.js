@@ -13,6 +13,10 @@ export const maps = [
       ...Array.from({length: 10}, (_, y) => ({x: 5, y: y + 2})),
       ...Array.from({length: 10}, (_, y) => ({x: 15, y: y + 2}))
     ],
+    rooms: [
+      {x: 2, y: 2}, {x: 3, y: 2}, {x: 2, y: 3}, {x: 3, y: 3}, // Room in map 1
+      {x: 17, y: 12}, {x: 18, y: 12}, {x: 17, y: 13}, {x: 18, y: 13} // Another room in map 1
+    ],
     zombieSpawnPoints: [
       {x: 1, y: 1},
       {x: 18, y: 1}, 
@@ -54,6 +58,10 @@ export const maps = [
       {x: 19, y: 14}, {x: 18, y: 15},
 
     ],
+    rooms: [
+      {x: 2, y: 10}, {x: 3, y: 10}, {x: 2, y: 11}, {x: 3, y: 11}, // Room in map 2
+      {x: 20, y: 3}, {x: 21, y: 3}, {x: 20, y: 4}, {x: 21, y: 4} // Another room in map 2
+    ],
     zombieSpawnPoints: [
       {x: 2, y: 2},
       {x: 12, y: 2},
@@ -86,6 +94,10 @@ export const maps = [
       ...Array.from({length: 10}, (_, i) => ({x: 25, y: 3 + i*2})),
       ...Array.from({length: 7}, (_, i) => ({x: 25, y: 2 + i*2})),
       {x: 25, y: 1}, {x: 25, y: 4},
+    ],
+    rooms: [
+      {x: 5, y: 5}, {x: 6, y: 5}, {x: 5, y: 6}, {x: 6, y: 6}, // Room in map 3
+      {x: 22, y: 12}, {x: 23, y: 12}, {x: 22, y: 13}, {x: 23, y: 13} // Another room in map 3
     ],
     zombieSpawnPoints: [
       {x: 7, y: 3},
@@ -125,6 +137,10 @@ export const maps = [
       ...Array.from({length: 5}, (_, x) => ({x: x + 15, y: 25})),
       ...Array.from({length: 5}, (_, x) => ({x: x + 25, y: 25})),
       ...Array.from({length: 5}, (_, x) => ({x: x + 30, y: 25})),
+    ],
+    rooms: [
+      {x: 10, y: 15}, {x: 11, y: 15}, {x: 10, y: 16}, {x: 11, y: 16}, // Room in map 4
+      {x: 30, y: 20}, {x: 31, y: 20}, {x: 30, y: 21}, {x: 31, y: 21} // Another room in map 4
     ],
     zombieSpawnPoints: [
       {x: 4, y: 19},
